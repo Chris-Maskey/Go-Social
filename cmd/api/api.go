@@ -17,6 +17,14 @@ type Application struct {
 
 type Config struct {
 	Addr string
+	DB   DBConfig
+}
+
+type DBConfig struct {
+	Addr         string
+	MaxOpenConns int
+	MaxIdleConns int
+	MaxIdleTime  string
 }
 
 func (app *Application) Mount() *chi.Mux {
